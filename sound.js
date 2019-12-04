@@ -69,13 +69,9 @@ let SoundStation = function(filename)
 		let that_v2 = this.that;
 		request.onload = function() {
 		  that_v2.context.decodeAudioData(request.response, function(theBuffer) {
-		  
 		    window.sfx[__buffer_ID] = theBuffer;
-
 	//" + filename_url + "
-
 		    console.log("Sound.load('mp3')... Ok!");
-		    
 //		    if (filename_url == "http://www.learnjquery.org/games/gem/sfx/delune.mp3")
 		    	window.soundtrackReady = true;
 		    	    
