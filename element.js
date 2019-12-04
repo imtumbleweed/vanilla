@@ -4,11 +4,8 @@ export let create = (target, type, id, style) => {
     let element = document.createElement(type);
 
     element.style.display = "block";
-
     element.style.position = "absolute";
-
     element.setAttribute("id", id);
-
     element.setAttribute("class", "box");
 
     Object.entries(style).map(entry => {
