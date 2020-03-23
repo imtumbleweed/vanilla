@@ -1,0 +1,96 @@
+<html>
+<head>
+    <title>Hello</title>
+    <script type = "module">
+            function select_tab(id) {
+                // remove selected class from all buttons
+                document.querySelectorAll(".route").forEach(item => item.classList.remove('selected'));
+                // select clicked element (visually)
+                document.querySelectorAll("#" + id).forEach(item => item.classList.add('selected'));
+            }
+            function load_content(id) {
+                // Update text "Content loading for {id}..."
+                // Of course, here you would do you content loading magic
+                // Perhaps run Fetch API to update resources
+                document.querySelector("#content").innerHTML = 'Content loading for /' + id + '...';
+            }
+            function push(event) {
+                // Get id attribute of the box or button or link clicked
+                let id = event.target.id;
+                // Visually select the clicked button/tab/box
+                select_tab(id);
+                // Update Title in Window's Tab
+                document.title = id;
+                // Load content for this tab/page
+                loadContent(id);
+                // Finally push state change to the address bar
+                window.history.pushState({id}, `${id}`, `/page/${id}`);
+            }
+            window.onload = event => {
+                // Add history push() event when boxes are clicked
+                window["home"].addEventListener("click", event => push(event))
+                window["about"].addEventListener("click", event => push(event))
+                window["gallery"].addEventListener("click", event => push(event))
+                window["contact"].addEventListener("click", event => push(event))
+                window["help"].addEventListener("click", event => push(event))
+            }
+            // Listen for PopStateEvent (Back or Forward buttons are clicked)
+            window.addEventListener("popstate", event => {
+                // Grab the history state id
+                let stateId = event.state.id;
+                // Show clicked id in console (just for fun)
+                console.log("stateId = ", stateId);
+                // Visually select the clicked button/tab/box
+                select_tab(stateId);
+                // Load content for this tab/page
+                loadContent(id);
+            });
+        </script>
+    <style>
+            * { /* global font */
+                font-family: Verdana;
+                font-size: 18px;
+            }
+            #root { display: flex; flex-direction: row; }
+            #content { display: flex;
+                display: block;
+                width: 800px;
+                height: 250px;
+                /* vertically centered text */
+                line-height: 250px;
+                border: 2px solid #555;
+                margin: 32px;
+                text-align: center;
+            }
+            .route {
+                cursor: pointer;
+                justify-content: center;
+                width: 150px;
+                height: 50px;
+                /* vertically centered text */
+                line-height: 50px;
+                position: relative;
+                border: 2px solid #555;
+                background: white;
+                text-align: center;
+                margin: 16px;
+            }
+            .route.selected { background: yellow; }
+        </style>
+</head>
+
+<body>
+
+<section id = "root">
+    <section class = "route" id = "home">/home</section>
+    <section class = "route" id = "about">/about</section>
+    <section class = "route" id = "gallery">/gallery</section>
+    <section class = "route" id = "contact">/contact</section>
+    <section class = "route" id = "help">/help</section>
+</section>
+
+<main id = "content">Content loading...</main>
+
+</body>
+
+</html>
