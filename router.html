@@ -9,6 +9,7 @@
                 document.querySelectorAll("#" + id).forEach(item => item.classList.add('selected'));
             }
             function load_content(id) {
+                console.log("Loading content for {" + id + "}");
                 // Update text "Content loading for {id}..."
                 // Of course, here you would do you content loading magic
                 // Perhaps run Fetch API to update resources
@@ -22,7 +23,7 @@
                 // Update Title in Window's Tab
                 document.title = id;
                 // Load content for this tab/page
-                loadContent(id);
+                load_content(id);
                 // Finally push state change to the address bar
                 window.history.pushState({id}, `${id}`, `/page/${id}`);
             }
@@ -43,7 +44,7 @@
                 // Visually select the clicked button/tab/box
                 select_tab(stateId);
                 // Load content for this tab/page
-                loadContent(id);
+                load_content(stateId);
             });
         </script>
     <style>
