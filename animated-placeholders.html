@@ -1,0 +1,147 @@
+
+<html>
+<head>
+    <title>Register</title>
+    <script type = "module">
+        window.addEventListener('DOMContentLoaded', (event) => {
+
+        });
+        window.onload = event => {
+            window['email'].focus();
+        };
+        window.onhashchange = event => {
+
+        };
+    </script>
+    <style style = "text/css">
+
+        #firstxxx-lastxxx {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 400px !important;
+        }
+
+        #firstxxx-lastxxx .input-container {  }
+
+        #firstxxx-lastxxx input { width: 190px !important; margin-right: 20px}
+
+        body {
+            position: relative;
+            width: 600px;
+            margin: auto;
+            padding: 32px;
+        }
+
+        .input-container {
+            position: relative;
+        }
+
+        input {
+            width: 400px;
+            height: 35px;
+            margin-bottom: 10px;
+            padding-left: 8px;
+        }
+
+        input { border: 1px solid silver !important; border-radius: 3px; }
+
+        input:focus {
+            border: 1px solid #888 !important;
+        }
+
+        .input-container .input-placeholder {
+            position: absolute;
+            top: 9px;
+            left: 10px;
+            font-size: 15px;
+            font-family: Arial;
+            background: white;
+            padding-left: 4px;
+            padding-right: 8px;
+            transition: 0.2s;
+            pointer-events: none;
+            color: #888;
+        }
+
+        .input-placeholder.active {
+            top: -8px;
+            left: 5px;
+            color: #888;
+            transform: scale(0.8);
+        }
+
+        *:focus { outline:0px transparent !important; }
+
+        * { font-family: verdana; font-size: 18px; }
+
+        /* Register button */
+        .B { cursor: pointer; padding: 15px; background: #eee; color: #333; font-weight: normal; }
+
+    </style>
+    </head>
+    <body>
+        <section>
+            <div><h1 style = 'color: gray; font-weight: normal;'>Register New Account</h1></div>
+            <div id = "login">
+                <div style = "display: flex" id = "firstxxx-lastxxx">
+                    <div class = "input-container">
+                        <input type = "textx"
+                                id = "firstxxx"
+                                onfocus = "window['placeholder-firstxxx'].classList.add('active')"
+                                onblur = "if (window['firstxxx'].value.length == 0) window['placeholder-firstxxx'].classList.remove('active')"/> <span id = "note2"></span>
+                        <div id = "placeholder-firstxxx" class = "input-placeholder">First Name</div>
+                    </div>
+                    <div class = "input-container">
+                        <input type = "text"
+                                id = "lastxxx"
+                                onfocus = "window['placeholder-lastxxx'].classList.add('active')"
+                                onblur = "if (window['lastxxx'].value.length == 0) window['placeholder-lastxxx'].classList.remove('active')"/> <span id = "note2"></span>
+                        <div id = "placeholder-lastxxx" class = "input-placeholder">Last Name</div>
+                    </div>
+                </div>
+                <div class = "spacer"></div>
+                <div class = "input-container">
+                    <input type = "emailx"
+                        name = "emailx"
+                     onfocus = "window['placeholder-email'].classList.add('active')"
+                      onblur = "if (window['email'].value.length == 0) window['placeholder-email'].classList.remove('active')"
+                          id = "email"/> <span id = "note1"></span>
+                     <div id = "placeholder-email"
+                       class = "input-placeholder">Email Address</div>
+                </div>
+                <div class = "spacer"></div>
+                <div class = "input-container">
+                    <input type = "text"
+                             id = "twitter"
+                             onfocus = "window['placeholder-twitter'].classList.add('active')"
+                             onblur = "if (window['twitter'].value.length == 0) window['placeholder-twitter'].classList.remove('active')"/> <span id = "note2"></span>
+                    <div id = "placeholder-twitter" class = "input-placeholder">Username</div>
+                </div>
+                <div class = "spacer"></div>
+                <div class = "input-container">
+                    <input type = "password"
+                             id = "password"
+                             onfocus = "window['placeholder-password'].classList.add('active')"
+                             onblur = "if (window['password'].value.length == 0) window['placeholder-password'].classList.remove('active')"/> <span id = "note2"></span>
+                    <div id = "placeholder-password" class = "input-placeholder">Password</div>
+                </div>
+                <div class = "spacer"></div>
+                <div class = "input-container">
+                    <input type = "password"
+                             id = "password2"
+                        onfocus = "window['placeholder-password-again'].classList.add('active')"
+                         onblur = "if (window['password2'].value.length == 0) window['placeholder-password-again'].classList.remove('active')"/> <span id = "note3"></span>
+                    <div id = "placeholder-password-again"
+                      class = "input-placeholder">Repeat Password</div>
+                </div>
+                <div class = "spacer" style = "height:16px;"></div>
+                <span    id = "registerButton"
+                      class = "B"
+                    onclick = "">Register</span>
+                <div class = "spacer" style = "height:8px;"></div>
+                <p><a href = "/forgotpassword" target = "">Forgot Password</a> | <a href = "/forgotusername" target = "">Forgot Username</a></p>
+                <p id = "note4"></p>
+            </div>
+        <section>
+    </body>
+</html>
