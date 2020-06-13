@@ -15,15 +15,15 @@
     </script>
     <style style = "text/css">
 
-        #firstxxx-lastxxx {
+        #first-last {
             display: grid;
             grid-template-columns: 1fr 1fr;
             width: 400px !important;
         }
 
-        #firstxxx-lastxxx .input-container {  }
+        #first-last .input-container {  }
 
-        #firstxxx-lastxxx input { width: 190px !important; margin-right: 20px}
+        #first-last input { width: 190px !important; margin-right: 20px}
 
         body {
             position: relative;
@@ -83,26 +83,26 @@
         <section>
             <div><h1 style = 'color: gray; font-weight: normal;'>Register New Account</h1></div>
             <div id = "login">
-                <div style = "display: flex" id = "firstxxx-lastxxx">
+                <div style = "display: flex" id = "first-last">
                     <div class = "input-container">
-                        <input type = "textx"
-                                id = "firstxxx"
-                                onfocus = "window['placeholder-firstxxx'].classList.add('active')"
-                                onblur = "if (window['firstxxx'].value.length == 0) window['placeholder-firstxxx'].classList.remove('active')"/> <span id = "note2"></span>
-                        <div id = "placeholder-firstxxx" class = "input-placeholder">First Name</div>
+                        <input type = "text"
+                                id = "first"
+                                onfocus = "window['placeholder-first'].classList.add('active')"
+                                onblur = "if (window['first'].value.length == 0) window['placeholder-first'].classList.remove('active')"/> <span id = "note2"></span>
+                        <div id = "placeholder-first" class = "input-placeholder">First Name</div>
                     </div>
                     <div class = "input-container">
                         <input type = "text"
-                                id = "lastxxx"
-                                onfocus = "window['placeholder-lastxxx'].classList.add('active')"
-                                onblur = "if (window['lastxxx'].value.length == 0) window['placeholder-lastxxx'].classList.remove('active')"/> <span id = "note2"></span>
-                        <div id = "placeholder-lastxxx" class = "input-placeholder">Last Name</div>
+                                id = "last"
+                                onfocus = "window['placeholder-last'].classList.add('active')"
+                                onblur = "if (window['last'].value.length == 0) window['placeholder-last'].classList.remove('active')"/> <span id = "note2"></span>
+                        <div id = "placeholder-last" class = "input-placeholder">Last Name</div>
                     </div>
                 </div>
                 <div class = "spacer"></div>
                 <div class = "input-container">
-                    <input type = "emailx"
-                        name = "emailx"
+                    <input type = "email"
+                        name = "email"
                      onfocus = "window['placeholder-email'].classList.add('active')"
                       onblur = "if (window['email'].value.length == 0) window['placeholder-email'].classList.remove('active')"
                           id = "email"/> <span id = "note1"></span>
@@ -112,18 +112,41 @@
                 <div class = "spacer"></div>
                 <div class = "input-container">
                     <input type = "text"
+                             id = "username"
+                           name = "username"
+                             onfocus = "window['placeholder-username'].classList.add('active')"
+                             onblur = "if (window['username'].value.length == 0) window['placeholder-username'].classList.remove('active')"/> <span id = "note2"></span>
+                    <div id = "placeholder-username" class = "input-placeholder">Username</div>
+                </div>
+                <div class = "spacer"></div>
+                <div class = "input-container">
+                    <input type = "text"
+                           name = "username"
                              id = "twitter"
                              onfocus = "window['placeholder-twitter'].classList.add('active')"
                              onblur = "if (window['twitter'].value.length == 0) window['placeholder-twitter'].classList.remove('active')"/> <span id = "note2"></span>
-                    <div id = "placeholder-twitter" class = "input-placeholder">Username</div>
+                    <div id = "placeholder-twitter" class = "input-placeholder">Twitter</div>
+                    <div style = "position: absolute; top: 10px; left: -30px; color: gray;">@</div>
                 </div>
                 <div class = "spacer"></div>
                 <div class = "input-container">
                     <input type = "password"
                              id = "password"
+                             onkeyup = "if (!window['placeholder-password-again'].classList.contains('active'))
+                                            window['placeholder-password-again'].classList.add('active');
+                                            window['password2'].value = this.value"
                              onfocus = "window['placeholder-password'].classList.add('active')"
-                             onblur = "if (window['password'].value.length == 0) window['placeholder-password'].classList.remove('active')"/> <span id = "note2"></span>
+                             onblur = "if (window['password'].value.length == 0)
+                                         window['placeholder-password'].classList.remove('active')"/> <span id = "note2"></span>
                     <div id = "placeholder-password" class = "input-placeholder">Password</div>
+                    <div id = "password-1-eye"
+                      class = "password-eye"
+                onmousedown = "if (this.classList.contains('on')) {
+                      window['password'].setAttribute('type', 'password');
+                      this.classList.remove('on');
+                    } else {
+                      window['password'].setAttribute('type', 'text');
+                      this.classList.add('on') }"></div>
                 </div>
                 <div class = "spacer"></div>
                 <div class = "input-container">
@@ -133,6 +156,14 @@
                          onblur = "if (window['password2'].value.length == 0) window['placeholder-password-again'].classList.remove('active')"/> <span id = "note3"></span>
                     <div id = "placeholder-password-again"
                       class = "input-placeholder">Repeat Password</div>
+                    <div id = "password-2-eye"
+                      class = "password-eye"
+                onmousedown = "if (this.classList.contains('on')) {
+                      window['password2'].setAttribute('type', 'password2');
+                      this.classList.remove('on');
+                    } else {
+                      window['password2'].setAttribute('type', 'text');
+                      this.classList.add('on') }"></div>
                 </div>
                 <div class = "spacer" style = "height:16px;"></div>
                 <span    id = "registerButton"
