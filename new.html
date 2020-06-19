@@ -1,98 +1,105 @@
 <html>
 <head>
-    <title>Title</title>
 
-    <!-- Note: type "module", not "javascript" -->
-    <script type = "module">
-        // You'll add your modules here
-        // import { API } from './static/api.js';
+  <title>Title</title>
 
-        window.addEventListener('DOMContentLoaded', event => {
-          /* Your DOM just loaded */
-        });
+  <meta charset="UTF-8">
 
-        window.onload = event => {
-          /* Your media (images, etc.) just loaded */
-        }
+  <meta name = "description" content = "HTML starter reset file">
+  <meta name = "keywords" content = "html, css, events, mouse, keyboard, mobile first, media queries">
+  <meta name = "author" content = "You">
+  <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
 
-        /* A key has been pressed */
-        document.body.onkeyup = function(e) {
-          if (e.keyCode == 32) {
-            /* space bar was pressed*/
-          }
-        }
+  <!-- Note: type "module", not "javascript" -->
+  <script type = "module">
+    // You'll add your modules here
+    // import { API } from './static/api.js';
+
+    window.addEventListener('DOMContentLoaded', event => {
+      /* Your DOM just loaded */
+    });
+
+    window.onload = event => {
+      /* Your media (images, etc.) just loaded */
+    }
+
+    /* A key has been pressed */
+    document.body.onkeyup = function(e) {
+      if (e.keyCode == 32) {
+        /* space bar was pressed*/
+      }
+    }
     </script>
 
     <style style = "text/css">
 
-        /* padding shouldn't impact element width
-           this is also CSS grid's default setting */
-        * { box-sizing: border-box }
+      /* padding shouldn't impact element width
+         this is also CSS grid's default setting */
+      * { box-sizing: border-box }
 
-        /* Chrome applies blue "usability" background
-           to autofilled input boxes, but
-           it's a nightmare for custom design */
-        input:-webkit-autofill,
-        input:-webkit-autofill:hover,
-        input:-webkit-autofill:focus,
-        input:-webkit-autofill:active  {
-          -webkit-box-shadow: 0 0 0 30px white inset !important;
-        }
+      /* Chrome applies blue "usability" background
+         to autofilled input boxes, but
+         it's a nightmare for custom design */
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus,
+      input:-webkit-autofill:active  {
+        -webkit-box-shadow: 0 0 0 30px white inset !important;
+      }
 
-        /* Remove Chrome outline (same reason as above) */
-        *:focus { outline: none; }
+      /* Remove Chrome outline (same reason as above) */
+      *:focus { outline: none; }
 
-        /* vertical and horizontal align */
-        .f { display: flex; height: 100%; }
-        .v { align-items: center }
-        .h { justify-content: center }
+      /* vertical and horizontal align */
+      .f { display: flex; height: 100%; }
+      .v { align-items: center }
+      .h { justify-content: center }
 
-        /* default test item */
-        .f section {
-          width: auto;
-          height: auto;
-          background: black;
-          color: white;
-        }
+      /* default test item */
+      .f section {
+        width: auto;
+        height: auto;
+        background: black;
+        color: white;
+      }
 
-        body {
+      body {
 
-        }
+      }
 
-        main {
-          height: 100%;
-        }
+      main {
+        height: 100%;
+      }
 
-        /* Mobile-first media queries
-        (use: min-width in ascending order) */
+      /* Mobile-first media queries
+      (use: min-width in ascending order) */
 
-        /* Mobile first, means this media query first */
-        @media screen and (min-width: 600px) {
-          * { background: black; }
-        }
+      /* Mobile first, means this media query first */
+      @media screen and (min-width: 600px) {
+        * { background: black; }
+      }
 
-        /* Next wider view */
-        @media screen and (min-width: 800px) {
-          * { background: yellow; }
-        }
+      /* Next wider view */
+      @media screen and (min-width: 800px) {
+        * { background: yellow; }
+      }
 
-        /* Next wider view */
-        @media screen and (min-width: 1000px) {
-          * { background: green; }
-        }
+      /* Next wider view */
+      @media screen and (min-width: 1000px) {
+        * { background: green; }
+      }
 
-        /* This is the full screen desktop*/
-        @media screen and (min-width: 1200px) {
-          * { background: blue; }
-        }
-
+      /* This is the full screen desktop*/
+      @media screen and (min-width: 1200px) {
+        * { background: blue; }
+      }
     </style>
-    </head>
-    <body>
-        <main id = "root">
-            <article class = "f v h">
-                <section class = "f v h">I am centered</section>
-            </article>
-        </main>
-    </body>
+</head>
+<body>
+  <main id = "root">
+    <article class = "f v h">
+      <section class = "f v h">I am centered</section>
+    </article>
+  </main>
+</body>
 </html>
