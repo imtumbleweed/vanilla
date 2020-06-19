@@ -25,21 +25,22 @@
 
   <style style = "text/css">
 
-    * { font-family: Arial; }
+    body {
 
-    // padding shouldn't impact element width this is also CSS grid's default setting
-    * { box-sizing: border-box }
-
-    // Chrome applies blue "usability" background  to autofilled input boxes, but it's a nightmare for custom design
-    input:-webkit-autofill,
-    input:-webkit-autofill:hover,
-    input:-webkit-autofill:focus,
-    input:-webkit-autofill:active  {
-      -webkit-box-shadow: 0 0 0 30px white inset !important;
     }
 
-    // Remove Chrome outline (same reason as above)
-    *:focus { outline: none; }
+    #root {
+
+    }
+
+    main {
+      height: 100%;
+    }
+
+    * { font-family: Arial; }
+
+    /* padding shouldn't impact element width this is also CSS grid's default setting */
+    * { box-sizing: border-box }
 
     /* vertical and horizontal align */
     .f { display: flex; height: 100%; }
@@ -54,36 +55,35 @@
       color: white;
     }
 
-    body {
+    /* Chrome applies blue "usability" background  to autofilled input boxes, but it's a nightmare for custom design */
+    input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active { -webkit-box-shadow: 0 0 0 30px white inset !important }
 
-    }
+    /* Remove Chrome outline (same reason as above) */
+    *:focus { outline: none }
 
-    main {
-      height: 100%;
-    }
-
-    // Mobile first, means this media query first -- use min-width in ascending order
-
-    // Smallest phone screen (iphone, android, etc.)
+    /* Mobile first, means this media query first -- use min-width in ascending order
+    Smallest phone screen (iphone, android, etc.) */
     @media screen and (min-width: 600px) {
-      * { background: black; }
+    * { background: black; }
     }
 
-    // Next wider view (iphone pro, etc)
+    /* Next wider view (iphone pro, etc) */
     @media screen and (min-width: 800px) {
       * { background: yellow; }
     }
 
-    // Next wider view (tablets)
+    /* Next wider view (tablets) */
     @media screen and (min-width: 1000px) {
       * { background: green; }
     }
 
-    // Full screen desktop
+    /* Full screen desktop */
     @media screen and (min-width: 1200px) {
       * { background: blue; }
     }
+
   </style>
+
 </head>
 <body>
   <main id = "root">
