@@ -34,13 +34,12 @@
 
   <style style = "text/css">
 
-    /* padding shouldn't impact element width
-       this is also CSS grid's default setting */
+    * { font-family: Arial; }
+
+    // padding shouldn't impact element width this is also CSS grid's default setting
     * { box-sizing: border-box }
 
-    /* Chrome applies blue "usability" background
-       to autofilled input boxes, but
-       it's a nightmare for custom design */
+    // Chrome applies blue "usability" background  to autofilled input boxes, but it's a nightmare for custom design
     input:-webkit-autofill,
     input:-webkit-autofill:hover,
     input:-webkit-autofill:focus,
@@ -48,7 +47,7 @@
       -webkit-box-shadow: 0 0 0 30px white inset !important;
     }
 
-    /* Remove Chrome outline (same reason as above) */
+    // Remove Chrome outline (same reason as above)
     *:focus { outline: none; }
 
     /* vertical and horizontal align */
@@ -72,25 +71,24 @@
       height: 100%;
     }
 
-    /* Mobile-first media queries
-    (use: min-width in ascending order) */
+    // Mobile first, means this media query first -- use min-width in ascending order
 
-    /* Mobile first, means this media query first */
+    // Smallest phone screen (iphone, android, etc.)
     @media screen and (min-width: 600px) {
       * { background: black; }
     }
 
-    /* Next wider view */
+    // Next wider view (iphone pro, etc)
     @media screen and (min-width: 800px) {
       * { background: yellow; }
     }
 
-    /* Next wider view */
+    // Next wider view (tablets)
     @media screen and (min-width: 1000px) {
       * { background: green; }
     }
 
-    /* This is the full screen desktop*/
+    // Full screen desktop
     @media screen and (min-width: 1200px) {
       * { background: blue; }
     }
