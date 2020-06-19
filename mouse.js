@@ -1,6 +1,9 @@
 // Mouse v. 12-04-2019
+// updated
 export class Mouse {
+
     constructor()  {
+
         this.current = {x: 0, y: 0};    // current mouse position on the screen, regardless of state
         this.memory = {x: 0, y: 0};     // memorized mouse position (for measuring dragging distance)
         this.difference = {x: 0, y: 0}; // difference between last click and current mouse position
@@ -10,7 +13,8 @@ export class Mouse {
         this.trackVelocity = false;
         this.timer = null;
         this.disabled = false;
-        // Mouse was pressed
+
+        // Mouse button was pressed
         document.body.addEventListener("mousedown", (e) => {
 
             if (this.disabled)
@@ -22,10 +26,12 @@ export class Mouse {
                 this.memory.y = this.current.y;
                 this.inverse.x = this.memory.x;
                 this.inverse.y = this.memory.y;
+
                 this.startTrackingVelocity();
             }
         });
-        // Mouse was released
+
+        // Mouse button was released
         document.body.addEventListener("mouseup", (e) => {
 
             if (this.disabled)
@@ -36,12 +42,10 @@ export class Mouse {
             this.current.y = 0;
             this.memory.x = 0;
             this.memory.y = 0;
-            // this.difference.x = 0; // shouldn't reset them, get box() because builds css style from them
-            // this.difference.y = 0;
-            // this.inverse.x = 0;
-            // this.inverse.y = 0;
+
             this.stopTrackingVelocity();
         });
+
         // Mouse is moving
         document.body.addEventListener("mousemove", (e) => {
 
@@ -60,7 +64,8 @@ export class Mouse {
             }
         });
     }
-    // calculate area created by click-and-dragging mouse as a css style
+
+    // Calculate area created by click-and-dragging mouse as a css style
     get box() {
         // create style from inverse x/y
         this.style = { left: this.inverse.x + "px", top: this.inverse.y + "px" };
@@ -71,19 +76,15 @@ export class Mouse {
         // return style object
         return this.style;
     }
+
+    /* Implement later */
     startTrackingVelocity() {
         this.trackVelocity = true;
-        if (this.timer == null) {
-            this.timer = setInterval(() => {
-                let oldx = this.velocity.x;
-                // this.velocity.x = this.current.x;
-                // this.velocity.xv = (this.velocity.x - oldx) * 0.1;
-            }, 35); // 35 is an ideal value, tried others doesn't work so well.
-        }
     }
+
+    /* Implement later */
     stopTrackingVelocity() {
         if (this.timer != null) {
-            // this.velocity = {x: 0, y: 0, vx: 0, vy: 0};
             clearInterval( this.timer );
             this.timer = null;
         }
