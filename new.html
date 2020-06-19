@@ -12,8 +12,15 @@
 
   <!-- Note: type "module", not "javascript" -->
   <script type = "module">
-    // You'll add your modules here
-    // import { API } from './static/api.js';
+
+    // Mouse click and scroll wheel events
+    import { Mouse } from './mouse.js';
+
+    // Keyboard shortcut events
+    import { activate_keyboard_shortcuts } from './keyboard.js';
+
+    // Edit what you want to happen on Ctrl-X, etc. in this function
+    activate_keyboard_shortcuts();
 
     window.addEventListener('DOMContentLoaded', event => {
       /* Your DOM just loaded */
@@ -23,77 +30,71 @@
       /* Your media (images, etc.) just loaded */
     }
 
-    /* A key has been pressed */
-    document.body.onkeyup = function(e) {
-      if (e.keyCode == 32) {
-        /* space bar was pressed*/
-      }
+  </script>
+
+  <style style = "text/css">
+
+    /* padding shouldn't impact element width
+       this is also CSS grid's default setting */
+    * { box-sizing: border-box }
+
+    /* Chrome applies blue "usability" background
+       to autofilled input boxes, but
+       it's a nightmare for custom design */
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active  {
+      -webkit-box-shadow: 0 0 0 30px white inset !important;
     }
-    </script>
 
-    <style style = "text/css">
+    /* Remove Chrome outline (same reason as above) */
+    *:focus { outline: none; }
 
-      /* padding shouldn't impact element width
-         this is also CSS grid's default setting */
-      * { box-sizing: border-box }
+    /* vertical and horizontal align */
+    .f { display: flex; height: 100%; }
+    .v { align-items: center }
+    .h { justify-content: center }
 
-      /* Chrome applies blue "usability" background
-         to autofilled input boxes, but
-         it's a nightmare for custom design */
-      input:-webkit-autofill,
-      input:-webkit-autofill:hover,
-      input:-webkit-autofill:focus,
-      input:-webkit-autofill:active  {
-        -webkit-box-shadow: 0 0 0 30px white inset !important;
-      }
+    /* default test item */
+    .f section {
+      width: auto;
+      height: auto;
+      background: black;
+      color: white;
+    }
 
-      /* Remove Chrome outline (same reason as above) */
-      *:focus { outline: none; }
+    body {
 
-      /* vertical and horizontal align */
-      .f { display: flex; height: 100%; }
-      .v { align-items: center }
-      .h { justify-content: center }
+    }
 
-      /* default test item */
-      .f section {
-        width: auto;
-        height: auto;
-        background: black;
-        color: white;
-      }
+    main {
+      height: 100%;
+    }
 
-      body {
+    /* Mobile-first media queries
+    (use: min-width in ascending order) */
 
-      }
+    /* Mobile first, means this media query first */
+    @media screen and (min-width: 600px) {
+      * { background: black; }
+    }
 
-      main {
-        height: 100%;
-      }
+    /* Next wider view */
+    @media screen and (min-width: 800px) {
+      * { background: yellow; }
+    }
 
-      /* Mobile-first media queries
-      (use: min-width in ascending order) */
+    /* Next wider view */
+    @media screen and (min-width: 1000px) {
+      * { background: green; }
+    }
 
-      /* Mobile first, means this media query first */
-      @media screen and (min-width: 600px) {
-        * { background: black; }
-      }
-
-      /* Next wider view */
-      @media screen and (min-width: 800px) {
-        * { background: yellow; }
-      }
-
-      /* Next wider view */
-      @media screen and (min-width: 1000px) {
-        * { background: green; }
-      }
-
-      /* This is the full screen desktop*/
-      @media screen and (min-width: 1200px) {
-        * { background: blue; }
-      }
-    </style>
+    /* This is the full screen desktop*/
+    @media screen and (min-width: 1200px) {
+      * { background: blue; }
+    }
+  </style>
 </head>
 <body>
   <main id = "root">
