@@ -1,5 +1,5 @@
 // Create element
-export let create = (target, type, id, style) => {
+export let create = (target, type, id, style, classname, content) => {
 
     let element = document.createElement(type);
 
@@ -7,6 +7,8 @@ export let create = (target, type, id, style) => {
     element.style.position = "absolute";
     element.setAttribute("id", id);
     element.setAttribute("class", "box");
+    if (classname) element.className = classname;
+    if (content) element.innerHTML = content;
 
     Object.entries(style).map(entry => {
         let [ property, value ] = entry;
