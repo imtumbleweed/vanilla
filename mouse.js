@@ -1,9 +1,11 @@
 // Mouse v. 12-04-2019
-// updated
+// updated  06-26-2020
 export class Mouse {
 
     constructor()  {
 
+        this.x = 0;
+        this.y = 0;                     // same as current.x and current.y
         this.current = {x: 0, y: 0};    // current mouse position on the screen, regardless of state
         this.memory = {x: 0, y: 0};     // memorized mouse position (for measuring dragging distance)
         this.difference = {x: 0, y: 0}; // difference between last click and current mouse position
@@ -22,8 +24,8 @@ export class Mouse {
 
             if (this.dragging == false) {
                 this.dragging = true;
-                this.memory.x = this.current.x;
-                this.memory.y = this.current.y;
+                this.x = this.memory.x = this.current.x;
+                this.y = this.memory.y = this.current.y;
                 this.inverse.x = this.memory.x;
                 this.inverse.y = this.memory.y;
 
@@ -52,8 +54,8 @@ export class Mouse {
             if (this.disabled)
                 return;
 
-            this.current.x = e.pageX;
-            this.current.y = e.pageY;
+            this.x = this.current.x = e.pageX;
+            this.x = this.current.y = e.pageY;
             this.velocity.x = (this.velocity.x + Math.abs(this.difference.x)) / 2;
             this.velocity.y = (this.velocity.y + Math.abs(this.difference.y)) / 2;
             if (this.dragging) {
