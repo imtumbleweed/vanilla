@@ -42,17 +42,35 @@
     /* padding shouldn't impact element width this is also CSS grid's default setting */
     * { box-sizing: border-box }
 
+    .noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+   }
+
     /* vertical and horizontal align */
-    .f { display: flex; height: 100%; }
+    .f { display: flex; }
     .v { align-items: center }
     .h { justify-content: center }
+    .r { flex-direction: row }
+    .c { flex-direction: column }
+    .s { justify-content: space-around }
+    .p { padding: 10px }
+    .pp { padding: 20px }
+    .ppp { padding: 30px }
+    .b { font-size: 28px }
+
+    .abs { position: absolute; }
+    .rel { position: relative; }
 
     /* default test item */
     .f section {
       width: auto;
       height: auto;
-      background: black;
-      color: white;
     }
 
     /* Chrome applies blue "usability" background  to autofilled input boxes, but it's a nightmare for custom design */
