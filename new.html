@@ -12,6 +12,10 @@
 
   <!-- Note: type "module", not "javascript" -->
   <script type = "module">
+    
+    // Use $ and $$ instead of dinosauric document.querySelector function
+    let $ = selector => document.querySelector(selector);
+    let $$ = selector => document.querySelectorAll(selector);
 
     window.addEventListener('DOMContentLoaded', event => {
       /* Your DOM just loaded */
