@@ -13,6 +13,13 @@
   <!-- Note: type "module", not "javascript" -->
   <script type = "module">
     
+    // fetch GET example; todo: needs test data properties
+    fetch("https://www.twitter.com/followers.json", { method: "get"}).then( (response) => response.text().then(msg => {
+      console.log(msg); // Message returned from the server
+    });
+                                                                           
+    // fetch POST example; todo: add
+    
     // Use $ and $$ instead of dinosauric document.querySelector function
     let $ = selector => document.querySelector(selector);
     let $$ = selector => document.querySelectorAll(selector);
