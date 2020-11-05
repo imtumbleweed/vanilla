@@ -67,25 +67,27 @@
    }
 
     /* vertical and horizontal align */
-    .f   { display: flex; }
-    .v   { align-items: center }
-    .h   { justify-content: center }
-    .r   { flex-direction: row }
-    .c   { flex-direction: column }
-    .s   { justify-content: space-around }
-    .fw  { width: 100% } /* full width */
-    .fh  { height: 100% } /* full height */
-    .p   { padding: 10px }
-    .pp  { padding: 20px }
-    .ppp { padding: 30px }    
-    .m   { margin: 10px }
-    .mm  { margin: 20px }
-    .mmm { margin: 30px }    
-    
+    .f { display: flex; }
+    .v { align-items: center }
+    .vs { align-items: flex-start }
+    .ve { align-items: flex-end }
+    .h { justify-content: center }
+    .hs { justify-content: flex-start }
+    .he { justify-content: flex-end }
+    .r { flex-direction: row }
+    .c { flex-direction: column }
+    .s { justify-content: space-around }
+    .o { padding: 5px }
+    .p { padding: 10px }
+    .pp { padding: 20px }
+    .ppp { padding: 30px }
+    .m { margin: 5px }
+    .mm { margin: 10px }
+    .mmm { margin: 20px }
+    .mmmm { margin: 30px }
     .b { font-size: 28px }
-
-    .abs { position: absolute; }
-    .rel { position: relative; }
+    .abs { position: absolute }
+    .rel { position: relative }
 
     /* default test item */
     .f section {
