@@ -55,7 +55,7 @@ export class Mouse {
                 return;
 
             this.x = this.current.x = e.pageX;
-            this.x = this.current.y = e.pageY;
+            this.y = this.current.y = e.pageY;
             this.velocity.x = (this.velocity.x + Math.abs(this.difference.x)) / 2;
             this.velocity.y = (this.velocity.y + Math.abs(this.difference.y)) / 2;
             if (this.dragging) {
