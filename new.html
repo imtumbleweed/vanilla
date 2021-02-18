@@ -13,16 +13,19 @@
   <!-- Note: type "module", not "javascript" -->
   <script type = "module">
     
-    // fetch GET example; todo: needs test data properties
-    fetch("https://www.twitter.com/followers.json", { method: "get"}).then( (response) => response.text().then(msg => {
-      console.log(msg); // Message returned from the server
-    }));
-                                                                           
-    // fetch POST example; todo: add
-    
-    // Use $ and $$ instead of dinosauric document.querySelector function
+    let make = function(payload) { return { method: 'post',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload) };
+    }
+
+    // Use  and $ instead of dinosauric document.querySelector function
     let $ = selector => document.querySelector(selector);
     let $$ = selector => document.querySelectorAll(selector);
+    
+    // fetch POST example; uses make function to create payload
+    fetch("https://www.twitter.com/followers.json", make({token:token})).then( (response) => response.text().then(msg => {
+        console.log(msg); // Text message returned from the server
+    }));                                           
     
     // Sort json by multiple properties
     const sortFields = (fields, invert) => (a, b) => fields.map(o => { let dir = 1; if (o[0] === '-') { dir = -1; o=o.substring(1); } return a[o] > b[o] ? dir : a[o] < b[o] ? -(dir) : 0;}).reduce((p, n) => p ? p : n, 0);
@@ -75,14 +78,16 @@
     .hs { justify-content: flex-start }
     .he { justify-content: flex-end }
     .r { flex-direction: row }
+    .rr { flex-direction: row-reverse }
     .c { flex-direction: column }
-    .s { justify-content: space-around }    
-    .w { flex-wrap: wrap }
-    .wr { flex-wrap: wrap-reverse }    
+    .cr { flex-direction: column-reverse }
+    .s { justify-content: space-around }
     .o { padding: 5px }
     .p { padding: 10px }
     .pp { padding: 20px }
     .ppp { padding: 30px }
+    .pppp { padding: 50px }
+    .ppppp { padding: 100px }
     .m { margin: 5px }
     .mm { margin: 10px }
     .mmm { margin: 20px }
@@ -91,6 +96,8 @@
     .abs { position: absolute }
     .rel { position: relative }
 
+    .zero-padding { padding: 0 !important; }
+    
     /* default test item */
     .f section {
       width: auto;
