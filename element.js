@@ -7,8 +7,8 @@ export let create = (target, type, id, style, classname, content) => {
     element.style.position = "absolute";
     element.setAttribute("id", id);
     element.setAttribute("class", "box");
-    if (classname) element.className = classname;
-    if (content) element.innerHTML = content;
+    classname && (element.className = classname);
+    content && (element.innerHTML = content);
 
     Object.entries(style).map(entry => {
         let [ property, value ] = entry;
